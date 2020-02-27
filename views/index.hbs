@@ -1,0 +1,36 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+
+<div class="my-4">
+    <h1>CRUD</h1>
+    <span>Brandon Reyes Minero</span>
+    <span>A01335537</span>
+    <h4>CRUD de estudiantes</h4>
+</div>
+
+<form class="mb4" action="/api/students" method="POST">
+    <div class="form-grout my-4">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+
+    <div class="form-grout my-4">
+        <label for="name">Matricula</label>
+        <input type="text" name="matricula" class="form-control">
+    </div>
+
+    <div class="form-grout my-4">
+        <label for="name">Carrera</label>
+        <input type="text" name="carrera" class="form-control">
+    </div>
+
+    <input type="submit" value="Add member" class="btn btn-primary btn-block my-4">
+</form>
+
+<h4>Students</h4>
+<ul class="list-group">
+    {{#each students}}
+    <li class="list-group-item">{{this.name}} : {{this.matricula}}</li>
+    {{/each}}
+</ul>
+
+<a href="/api/students" class="btn btn-light mt-4">Visit API</a>
