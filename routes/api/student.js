@@ -5,13 +5,15 @@ const knex = require('../../database/connection');
 
 //Get All products
 router.get('/', (req, res) =>{
-    knex('products').select().then((products) =>{
-        res.status(200).render('products', {title: 'Products', data: products});
+    knex('student').select().then((student) =>{
+        res.status(200).render('index');;
+        console.log(student);
     })
     .catch((error)=>{
         res.status(500).json({error});
     })
-});
+    
+})
 
 //Update member and get data
 router.get('/editar/:id', (req, res) =>{
@@ -50,5 +52,5 @@ router.get('/:id', (req, res) =>{
     
 });
 
-
+module.exports = router;
 

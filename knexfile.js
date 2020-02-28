@@ -8,9 +8,9 @@ module.exports = {
     connection: {
       host: process.env.DB_DEVELOPMENT_HOST || '127.0.0.1',
       port: process.env.DB_DEVELOPMENT_PORT || '3306',
-      database: process.env.DB_DEVELOPMENT_NAME || 'crud_database',
+      database: process.env.DB_DEVELOPMENT_NAME || 'student_database',
       user:  process.env.DB_DEVELOPMENT_USER || 'root',
-      password: ''
+      password: process.env.DB_DEVELOPMENT_PASSWORD || ''
     },
     pool: {
       min: 2,
@@ -25,9 +25,9 @@ module.exports = {
     connection: {
       host: process.env.DB_DEVELOPMENT_HOST || '127.0.0.1',
       port: process.env.DB_DEVELOPMENT_PORT || '3306',
-      database: process.env.DB_DEVELOPMENT_NAME || 'crud_database',
+      database: process.env.DB_DEVELOPMENT_NAME || 'student_database',
       user:  process.env.DB_DEVELOPMENT_USER || 'root',
-      password: ''
+      password: process.env.DB_PRODUCTION_PASSWORD || ''
     },
     pool: {
       min: 2,

@@ -1,15 +1,14 @@
 exports.up = function(knex) {
     return knex.schema
-      .createTable('products', (table) => {
+      .createTable('student', (table) => {
         table.increments('id');
         table.string('name', 255).notNullable();
-        table.string('description', 512).notNullable();
-        table.float('price');
-        table.timestamps(true, true);
+        table.string('matricula', 255).notNullable();
+        table.string('carrera', 255).notNullable();
       });
   };
   
   exports.down = function(knex) {
     return knex.schema
-      .dropTable('products');
+      .dropTable('student');
   };
