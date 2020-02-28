@@ -1,0 +1,21 @@
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Matricula</th>
+      <th scope="col">Carrera</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      {{#each data}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.matricula}}</td>
+      <td>{{this.carrera}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

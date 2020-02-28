@@ -3,26 +3,34 @@ const router = express.Router();
 const knex = require('../../database/connection');
 
 
-//Get All products
+//Get All students
 router.get('/', (req, res) =>{
     knex('student').select().then((student) =>{
-        res.status(200).render('index');;
+        res.status(200).render('index', {data: student});;
         console.log(student);
     })
     .catch((error)=>{
         res.status(500).json({error});
     })
     
-})
+});
 
-//Update member and get data
+//Get one user
+router.get('/info/:id', (req, res) =>{
+    knex('student').select().where('id', req.params.id).then((student) =>{
+        res.status(200).render('info', {data: student});;
+        console.log(student);
+    })
+    .catch((error)=>{
+        res.status(500).json({error});
+    })
+    
+});
+
+//Edit- Update member and get data
 router.get('/editar/:id', (req, res) =>{
-    const found = members.some(member => members.id === parseInt(req.params.id));
-    if(found){
-        res.json(members.filter(member => member.id === parseInt(req.params.id)));
-    }else{
-        res.status(400).json({msg: `Member not found with id ${req.params.id}`});
-    }
+
+    
 });
 
 //Update member and put data

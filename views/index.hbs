@@ -39,35 +39,20 @@
     </tr>
   </thead>
   <tbody>
+      {{#each data}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.matricula}}</td>
+      <td>{{this.carrera}}</td>
       <td style="text-align: center;">
-        <button class="btn btn-danger" style="width: 30%;">Borrar</button>
-        <button class="btn btn-secondary" style="width: 30%;">Editar</button>
+        <a href="/info/{{this.id}}" class="btn btn-danger" style="width: 20%;">Borrar</a>
+        <a href="/editar/{{this.id}}" class="btn btn-secondary" style="width: 20%;">Editar</a>
+        <a href="/info/{{this.id}}" class="btn btn-info" style="width: 20%;">Info</a>
       </td>
     </tr>
-
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td style="text-align: center;">
-        <button class="btn btn-danger" style="width: 30%;">Borrar</button>
-        <button class="btn btn-secondary" style="width: 30%;">Editar</button>
-      </td>
-    </tr>
-
+    {{/each}}
   </tbody>
 </table>
-
-<ul class="list-group">
-    {{#each students}}
-    <li class="list-group-item">{{this.name}} : {{this.matricula}}</li>
-    {{/each}}
-</ul>
 
 <a href="/api/students" class="btn btn-light mt-4">Visitar API</a>
