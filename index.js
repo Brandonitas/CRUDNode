@@ -1,8 +1,12 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser');
 const app = express();
 let appRoutes = require('./routes/api/student');
 const knex = require('./database/connection');
+
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json());
 
 //Handlebars 
 const extNameHBs = 'hbs';
