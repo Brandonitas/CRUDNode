@@ -27,10 +27,47 @@
 </form>
 
 <h4>Students</h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Matricula</th>
+      <th scope="col">Carrera</th>
+      <th scope="col" style="text-align: center;">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td style="text-align: center;">
+        <button class="btn btn-danger" style="width: 30%;">Borrar</button>
+        <button class="btn btn-secondary" style="width: 30%;">Editar</button>
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td style="text-align: center;">
+        <button class="btn btn-danger" style="width: 30%;">Borrar</button>
+        <button class="btn btn-secondary" style="width: 30%;">Editar</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
 <ul class="list-group">
     {{#each students}}
     <li class="list-group-item">{{this.name}} : {{this.matricula}}</li>
     {{/each}}
 </ul>
 
-<a href="/api/students" class="btn btn-light mt-4">Visit API</a>
+<a href="/api/students" class="btn btn-light mt-4">Visitar API</a>
