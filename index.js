@@ -12,6 +12,9 @@ app.set('view engine', extNameHBs);
 app.get('/', (req, res) =>{
     res.render('index');
 })
+app.get('/editar', (req, res) =>{
+    res.render('editar');
+});
 
 // Importa la configuración de la app
 let appConfig = require('./configs/app');
