@@ -1,6 +1,6 @@
 <h4>Editar</h4>
 {{#each data}}
-<form class="mb4" action="/editar/:id" method="POST">
+
     <div class="form-grout my-4">
         <label for="name">Nombre</label>
         <input id="name" type="text" name="name" value= "{{this.name}}" class="form-control" required>
@@ -16,8 +16,8 @@
         <input id="carrera" type="text" name="carrera" value="{{this.carrera}}" class="form-control" required>
     </div>
 
-    <button onClick="updateStudent({{this.id}})" value="Edit student" class="btn btn-primary btn-block my-4">Actualizar</button>
-</form>
+    <button onClick="updateStudent({{this.id}})" class="btn btn-primary btn-block my-4">Actualizar</button>
+
 {{/each}}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -39,7 +39,9 @@
             success: function () {
                 location.replace('/');
             }
-        }); 
+        });
     }
+
 </script>
+
 
