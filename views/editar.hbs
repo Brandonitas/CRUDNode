@@ -23,31 +23,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
     function updateStudent(id) {
+        var url = 'http://localhost:3000/editar/'+id;
+        var name = $('#name').val();
+        var matricula = $('#matricula').val();
+        var carrera = $('#carrera').val();
 
-                console.log("click");
-                var url = 'http://localhost:3000/editar/'+id;
-                var name = $('#name').val();
-                var matricula = $('#matricula').val();
-                var carrera = $('#carrera').val();
-                var student = {
-                    name: name,
-                    matricula: matricula,
-                    carrera: carrera
-                }
-
-                $.ajax({
-                    url: url,    
-                    type: 'PUT',   //type is any HTTP method
-                    data: {
-                        name: name,
-                        matricula: matricula,
-                        carrera: carrera
-                    },      //Data as js object
-                    success: function () {
-                        location.replace('/');
-                    }
-                })
-                ; 
+        $.ajax({
+            url: url,
+            type: 'PUT', 
+            data: {
+                name: name,
+                matricula: matricula,
+                carrera: carrera
+            },
+            success: function () {
+                location.replace('/');
+            }
+        }); 
     }
 </script>
 

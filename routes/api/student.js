@@ -57,42 +57,7 @@ router.get('/editar/:id', (req, res) =>{
     .catch((error)=>{
         res.status(500).json({error});
     });
-
 });
-
-//Edit- Update member and put data
-router.post('/editar/:id', (req, res) =>{
-    knex('student').update(
-        {name: req.body.name,
-        matricula: req.body.matricula,
-        carrera: req.body.carrera
-        }
-    ).where('id', req.params.id).then((student) =>{
-        //res.status(200).render('/', {data: student});;
-        //console.log(student);
-        //res.redirect('/');
-        res.status(200);
-    })
-    .catch((error)=>{
-        res.status(500).json({error});
-    });
-
-});
-
-
-//Delete student
-/*router.get('/eliminar/:id', (req, res) =>{
-    knex('student').where('id', req.params.id).del().then((student) =>{
-        res.redirect('/');
-    });
-});*/
-
-/*function deleteStudent(id) {
-    knex('student').where('id', id).del().then((student) =>{
-        console.log("ELIMINADO USUARIO:");
-        res.redirect('/');
-    });
-};*/
 
 
 //Edit- Update member and put data
@@ -113,7 +78,7 @@ router.put('/editar/:id', (req, res) =>{
 });
 
 
-//Delete 
+//Delete member
 router.delete('/eliminar/:id', (req, res) =>{
     knex('student').where('id', req.params.id).del().then((student) =>{
         return res.status(200).send('OK');

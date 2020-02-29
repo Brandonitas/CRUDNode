@@ -16,20 +16,6 @@ app.set('view engine', extNameHBs);
 
 app.use('/', appRoutes);
 
-//Homepage route and render
-/*app.get('/', (req, res) =>{
-    knex('student').select().then((student) =>{
-        res.status(200).render('index');;
-        console.log(student);
-    })
-    .catch((error)=>{
-        res.status(500).json({error});
-    })
-    
-})
-app.get('/editar', (req, res) =>{
-    res.render('editar');
-});*/
 
 // Importa la configuración de la app
 let appConfig = require('./configs/app');

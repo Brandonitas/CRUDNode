@@ -1,10 +1,10 @@
 <h1 class="text-center mb-3">{{title}}</h1>
 
 <div class="my-4">
-    <h1>CRUD</h1>
+    <h4>CRUD de estudiantes</h4>
     <span>Brandon Reyes Minero</span>
     <span>A01335537</span>
-    <h4>CRUD de estudiantes</h4>
+    
 </div>
 
 <form class="mb4" action="/" method="POST">
@@ -23,10 +23,10 @@
         <input type="text" name="carrera" class="form-control" required>
     </div>
 
-    <input type="submit" value="Add student" class="btn btn-primary btn-block my-4">
+    <input type="submit" value="Agregar estudiante" class="btn btn-primary btn-block my-4">
 </form>
 
-<h4>Students</h4>
+<h4 class="my-4">Lista de estudiantes</h4>
 
 <table class="table">
   <thead>
@@ -55,27 +55,17 @@
   </tbody>
 </table>
 
-<a href="/api/students" class="btn btn-light mt-4">Visitar API</a>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 
-function deleteStudent(id) {
-
-                console.log("click");
-                var url = 'http://localhost:3000/eliminar/'+id;                
-
-                $.ajax({
-                    url: url,    
-                    type: 'DELETE',   //type is any HTTP method
-                    success: function () {
-                        location.replace('/');
-                    }
-                })
-                ; 
+    function deleteStudent(id) {
+        var url = 'http://localhost:3000/eliminar/'+id;
+            $.ajax({
+                url: url,    
+                type: 'DELETE',  
+                success: function () {
+                    location.replace('/');
+                }
+            }); 
     }
-
-
-
 </script>
